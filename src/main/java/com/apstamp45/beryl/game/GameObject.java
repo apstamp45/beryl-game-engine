@@ -1,12 +1,15 @@
 package com.apstamp45.beryl.game;
 
 import com.apstamp45.beryl.game.components.Component;
-import com.apstamp45.beryl.render.Transform;
 
 import java.util.ArrayList;
 
 /**
- * Represents an object in the game.
+ * A GameObject is used to serve multiple
+ * purposes in a game. Based on what Component/s
+ * are added, it can be used to create a drawn
+ * sprite on the screen, or do some background
+ * calculations.
  */
 public class GameObject {
 
@@ -36,6 +39,11 @@ public class GameObject {
         transform = new Transform();
     }
 
+    /**
+     * Creates a GameObject.
+     * @param name The GameObject's name.
+     * @param transform The GameObject's Transform.
+     */
     public GameObject(String name, Transform transform) {
         this.name = name;
         components = new ArrayList<>();

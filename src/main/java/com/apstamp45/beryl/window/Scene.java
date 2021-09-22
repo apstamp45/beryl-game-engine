@@ -7,7 +7,10 @@ import com.apstamp45.beryl.render.Renderer;
 import java.util.ArrayList;
 
 /**
- * This interface defines a scene.
+ * A Scene is used to define a scene
+ * in the game. Scenes can be things
+ * such as loading screens, menus,
+ * or the actual game itself.
  */
 public abstract class Scene {
 

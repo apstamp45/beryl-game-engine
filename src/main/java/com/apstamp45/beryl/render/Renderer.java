@@ -17,7 +17,7 @@ public class Renderer {
     private final int MAX_BATCH_SIZE = 1000;
 
     /**
-     * Stores all the RenderBatches.
+     * Stores all the RenderBatch/es.
      */
     private LinkedList<RenderBatch> renderBatches = new LinkedList<>();
 

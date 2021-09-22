@@ -122,9 +122,8 @@ public class MouseEvent {
      * @param window The window that the event happened in.
      * @param button The button that caused the action.
      * @param action The action that happened.
-     * @param mods The mod keys that were pressed while
-     * the action occurred.
-     * that caused the action could not be handled.
+     * @param mods The moderator keys that were pressed
+     * during the event.
      */
     public static void mouseButtonCallback(long window, int button, int action, int mods) {
         if (button >= get().mouseButtonPressed.length) {

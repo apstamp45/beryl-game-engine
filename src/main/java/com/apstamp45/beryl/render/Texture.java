@@ -83,6 +83,9 @@ public class Texture {
         }
     }
 
+    /**
+     * Unbinds this texture.
+     */
     public void unBind() {
         glBindTexture(GL_TEXTURE_2D, 0);
         isBound = false;

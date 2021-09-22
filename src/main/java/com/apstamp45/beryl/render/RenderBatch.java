@@ -12,6 +12,11 @@ import static org.lwjgl.opengl.GL20.*;
 import static org.lwjgl.opengl.GL30.glBindVertexArray;
 import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
+/**
+ * A RenderBatch contains a list of
+ * SpriteRenderer/s to be drawn to the
+ * window by the Renderer.
+ */
 public class RenderBatch {
 
     /**
@@ -59,6 +64,11 @@ public class RenderBatch {
      */
     private SpriteRenderer[] spriteRenderers;
 
+    /**
+     * States whether this RenderBatch
+     * currently has room for more
+     * SpriteRenderer/s.
+     */
     private boolean hasRoom = true;
 
     /**

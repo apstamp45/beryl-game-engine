@@ -52,8 +52,6 @@ public class Window extends WindowSize {
      * @param title The window's title.
      */
     private Window(int width, int height, String title) {
-
-        // Get system info
         SystemInfo.getSystemInfo();
         WindowSize.width = width;
         WindowSize.height = height;

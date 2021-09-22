@@ -1,4 +1,4 @@
-package com.apstamp45.beryl.render;
+package com.apstamp45.beryl.game;
 
 import org.joml.Vector2f;
 
@@ -18,6 +18,11 @@ public class Transform {
      */
     public Vector2f scale;
 
+    /**
+     * Creates a Transform with a
+     * position of (0, 0), and
+     * a size of 0x0 pixels.
+     */
     public Transform() {
         init(new Vector2f(), new Vector2f());
     }

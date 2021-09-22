@@ -47,8 +47,8 @@ public class KeyEvent {
      * @param key The key that caused the action.
      * @param scancode IDK.
      * @param action The key event action code.
-     * @param mods Moderator keys that were pressed when the
-     * action occurred.
+     * @param mods Modifier keys that were pressed
+     * during the event.
      */
     public static void keyCallback(long window, int key, int scancode, int action, int mods) {
         if (key >= get().keyPressed.length) {

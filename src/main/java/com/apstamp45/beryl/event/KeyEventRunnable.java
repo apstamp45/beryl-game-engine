@@ -11,7 +11,7 @@ public interface KeyEventRunnable {
      * @param key The code of the key that was pressed.
      * @param scancode The scancode (whatever that is).
      * @param action The action that happened.
-     * @param mods The moderator keys that were pressed
+     * @param mods Modifier keys that were pressed
      * during the event.
      */
     public void run(int key, int scancode, int action, int mods);

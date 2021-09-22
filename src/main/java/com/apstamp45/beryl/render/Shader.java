@@ -38,6 +38,10 @@ public class Shader {
      */
     private final String filepath;
 
+    /**
+     * States whether this Shader is
+     * currently being used.
+     */
     private boolean isBeingUsed = false;
 
     /**

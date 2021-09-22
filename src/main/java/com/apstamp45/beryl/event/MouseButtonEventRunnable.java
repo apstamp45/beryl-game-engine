@@ -5,5 +5,14 @@ package com.apstamp45.beryl.event;
  * Mouse button event happens.
  */
 public interface MouseButtonEventRunnable {
+
+    /**
+     * Runs when a mouse button event happens.
+     * @param button The mouse button that caused
+     * the event.
+     * @param action The action that occurred.
+     * @param mods Modifier keys that were pressed
+     * during the event.
+     */
     public void run(int button, int action, int mods);
 }

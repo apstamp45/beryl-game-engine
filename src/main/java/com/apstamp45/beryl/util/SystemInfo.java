@@ -47,7 +47,7 @@ public class SystemInfo {
      */
     public static void getSystemInfo() {
 
-        // Get OS stuff.
+        // Get OS information
         os = System.getProperty("os.name").toLowerCase();
         if (os.contains("win")) {
             pathSeparator = "\\";
@@ -59,7 +59,7 @@ public class SystemInfo {
             endOfLine = "\n";
         }
 
-        // Get screen size.
+        // Get the screen size
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         screenWidth = screenSize.width;
         screenHeight = screenSize.height;

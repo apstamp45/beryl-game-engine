@@ -6,5 +6,11 @@ package com.apstamp45.beryl.event;
  * happens.
  */
 public interface MouseScrollEventRunnable {
+
+    /**
+     * Runs when a mouse scroll event occurs.
+     * @param xOffset The mouse scroll's x offset.
+     * @param yOffset The mouse scroll's y offset.
+     */
     public void run(double xOffset, double yOffset);
 }
