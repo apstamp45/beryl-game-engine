@@ -113,7 +113,6 @@ public class RenderBatch {
      */
     public RenderBatch(int maxBatchSize) {
         shader = AssetPool.getShader(DEFAULT_SHADER_FILE);
-        shader.compile();
         this.maxBatchSize = maxBatchSize;
         spriteRenderers = new SpriteRenderer[maxBatchSize];
         vertices = new float[maxBatchSize * 4 * VERTEX_SIZE];
