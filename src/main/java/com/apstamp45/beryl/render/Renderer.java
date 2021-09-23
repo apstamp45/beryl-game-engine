@@ -12,18 +12,86 @@ import java.util.LinkedList;
 public class Renderer {
 
     /**
+     * Renderer/s will be created with this shader
+     * as default.
+     */
+    private static String DEFAULT_SHADER_FILE = null;
+
+    /**
      * How many sprites can each batch hold.
      */
-    private final int MAX_BATCH_SIZE = 1000;
+    private final int MAX_BATCH_SIZE;
 
     /**
      * Stores all the RenderBatch/es.
      */
-    private LinkedList<RenderBatch> renderBatches = new LinkedList<>();
+    private final LinkedList<RenderBatch> renderBatches = new LinkedList<>();
 
+    /**
+     * The Renderer's shader file.
+     */
+    private String shaderFile;
+
+    /**
+     * Creates a Renderer.
+     */
     public Renderer() {
-        RenderBatch renderBatch = new RenderBatch(MAX_BATCH_SIZE);
+        MAX_BATCH_SIZE = 1000;
+        if (Renderer.DEFAULT_SHADER_FILE == null) {
+            throw new IllegalStateException("Default shader not set. "
+                                            + "Use Renderer.setDefaultShader() to do so.");
+        }
+        RenderBatch renderBatch = new RenderBatch(MAX_BATCH_SIZE, DEFAULT_SHADER_FILE);
         renderBatches.add(renderBatch);
+    }
+
+    /**
+     * Creates a Renderer.
+     * @param shaderFile The Renderer's shader.
+     */
+    public Renderer(String shaderFile) {
+        this.shaderFile = shaderFile;
+        MAX_BATCH_SIZE = 1000;
+        RenderBatch renderBatch = new RenderBatch(MAX_BATCH_SIZE, shaderFile);
+        renderBatches.add(renderBatch);
+    }
+
+    /**
+     * Creates a Renderer.
+     * @param maxBatchSize How many SpriteRenderer/s
+     * each RenderBatch will hold.
+     */
+    public Renderer(int maxBatchSize) {
+        MAX_BATCH_SIZE = maxBatchSize;
+        if (Renderer.DEFAULT_SHADER_FILE == null) {
+            throw new IllegalStateException("Default shader not set. "
+                    + "Use Renderer.setDefaultShader() to do so.");
+        }
+        RenderBatch renderBatch = new RenderBatch(MAX_BATCH_SIZE, DEFAULT_SHADER_FILE);
+        renderBatches.add(renderBatch);
+    }
+
+    /**
+     * Creates a Renderer.
+     * @param shaderFile The Renderer's shader.
+     * @param maxBatchSize How many SpriteRenderer/s
+     * each RenderBatch will hold.
+     */
+    public Renderer(String shaderFile, int maxBatchSize) {
+        this.shaderFile = shaderFile;
+        MAX_BATCH_SIZE = maxBatchSize;
+        RenderBatch renderBatch = new RenderBatch(MAX_BATCH_SIZE, shaderFile);
+        renderBatches.add(renderBatch);
+    }
+
+    /**
+     * Sets the default shader file. This
+     * shader will be used to create new
+     * Renderers.
+     * @param shaderFile The shader file.
+     */
+    public static void setDefaultShaderFile(String shaderFile) {
+        Renderer.DEFAULT_SHADER_FILE = shaderFile;
     }
 
     /**
@@ -62,7 +130,7 @@ public class Renderer {
             }
         }
         if (!added) {
-            RenderBatch renderBatch = new RenderBatch(MAX_BATCH_SIZE);
+            RenderBatch renderBatch = new RenderBatch(MAX_BATCH_SIZE, shaderFile);
             renderBatch.start();
             renderBatches.add(renderBatch);
             renderBatch.addSpriteRenderer(spriteRenderer);

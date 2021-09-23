@@ -54,12 +54,6 @@ public class RenderBatch {
     private final int VERTEX_SIZE_BYTES = VERTEX_SIZE * Float.BYTES;
 
     /**
-     * A RenderBatch will be created with
-     * this shader as default.
-     */
-    public static final String DEFAULT_SHADER_FILE = "./resources/shaders/default.glsl";
-
-    /**
      * Stores all the SpriteRenderers.
      */
     private SpriteRenderer[] spriteRenderers;
@@ -111,8 +105,8 @@ public class RenderBatch {
      * of that can be drawn using this
      * RendererBatch.
      */
-    public RenderBatch(int maxBatchSize) {
-        shader = AssetPool.getShader(DEFAULT_SHADER_FILE);
+    public RenderBatch(int maxBatchSize, String shaderFile) {
+        shader = AssetPool.getShader(shaderFile);
         this.maxBatchSize = maxBatchSize;
         spriteRenderers = new SpriteRenderer[maxBatchSize];
         vertices = new float[maxBatchSize * 4 * VERTEX_SIZE];

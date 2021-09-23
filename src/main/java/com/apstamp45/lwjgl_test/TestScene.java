@@ -25,7 +25,7 @@ public class TestScene extends Scene {
         camera = new Camera(new Vector2f());
 
         // Create a new Renderer
-        renderer = new Renderer();
+        renderer = new Renderer("./resources/shaders/default.glsl");
 
         // Create the mouse nommer
         GameObject mouseNommer = new GameObject("mouseNommer",

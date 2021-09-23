@@ -43,7 +43,6 @@ public abstract class Scene {
      * Runs when this Scene is entered.
      */
     public void start() {
-        renderer = new Renderer();
         for (GameObject gameObject : gameObjects) {
             gameObject.start();
             renderer.add(gameObject);
